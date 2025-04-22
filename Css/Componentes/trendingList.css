@@ -1,0 +1,259 @@
+@import "../styles.css";
+/* CONTENEDOR GENERAL */
+/* trending-box animable */
+
+:root {
+    --color-trending-box: #425f6d; /* var(--color-trending-box) */
+    --color-trending-header-icon: #a9c083; /* var(--color-trending-header-icon) */
+    --color-trending-list-item: #7da190; /* var(--color-trending-list-item) */
+    --color-trending-list-item-hover: #b0d3bf; /* var(--color-trending-list-item-hover) */
+}
+
+.trending-box {
+    background-color: var(--color-trending-box);
+    border-radius: 12px;
+    padding: 20px;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: height 0.4s ease; /* <-- transicion de altura */
+    overflow: hidden; /* para evitar scroll interno */
+    height: 380px;     /* altura por defecto (cerrado) */
+}
+
+/* Estado expandido */
+.trending-box.expandido {
+    height: 600px;
+}
+
+/* ENCABEZADO */
+.trending-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.trending-header h2 {
+    font-size: 25px;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.trending-header .icon {
+    font-size: 22px;
+    color: var(--color-trending-header-icon);
+}
+
+.trending-list-wrapper {
+    position: relative;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.trending-list-wrapper::before,
+.trending-list-wrapper::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 16px;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+}
+
+.trending-list-wrapper::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(25, 50, 25, 0.35), transparent);
+}
+
+.trending-list-wrapper::after {
+    bottom: 51.5px;
+    background: linear-gradient(to top, rgba(25, 50, 25, 0.35), transparent);
+}
+
+/* Transiciones distintas para mostrar/ocultar */
+.trending-list-wrapper.shadow-top::before {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+.trending-list-wrapper:not(.shadow-top)::before {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.trending-list-wrapper.shadow-bottom::after {
+    opacity: 1;
+    transition: opacity 0.55s ease-in;
+}
+.trending-list-wrapper:not(.shadow-bottom)::after {
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
+}
+
+
+/* LISTA */
+.trending-list {
+    flex-grow: 1;
+    list-style: decimal inside;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative; /* Opcional si necesitas algo relativo dentro */
+}
+
+
+.trending-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.trending-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Sombra superior */
+.trending-list.shadow-top::before {
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+.trending-list:not(.shadow-top)::before {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+/* Sombra inferior */
+.trending-list.shadow-bottom::after {
+    opacity: 1;
+    transition: opacity .55s ease-in;
+}
+.trending-list:not(.shadow-bottom)::after {
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
+}
+
+
+.trending-list li {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-trending-list-item);
+    padding: 8px 10px;
+    border-radius: 8px;
+    gap: 10px;
+    position: relative;
+}
+
+/* Animación de entrada para nuevos elementos */
+.trending-list li.nuevo {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.trending-list li.nuevo.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Imagen circular */
+.trending-list img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--color-text);
+}
+
+/* Nombre y categoría */
+.trending-list div {
+    flex-grow: 1;
+}
+
+.trending-list strong {
+    display: block;
+    font-size: 14px;
+    color: var(--color-background);
+}
+
+.trending-list p {
+    font-size: 12px;
+    margin: 0;
+    color: var(--color-background);
+}
+
+/* Porcentaje alineado a la derecha */
+.trending-pct {
+    font-size: 13px;
+    font-weight: bold;
+    color: #c0d9af;
+}
+
+/* Ver más */
+.ver-mas {
+    margin-top: 15px;
+    text-align: center;
+    border-top: 1px solid #c0d9af50;
+    padding-top: 10px;
+    padding-bottom: 11px;
+    margin-bottom: -5px;
+    border-radius: 8px;
+    background-color: #43606e;
+    transition: background-color 0.15s ease;
+    z-index: 1;
+}
+
+.ver-mas a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.2s ease;
+    display: inline-block;
+    position: relative;
+}
+
+/* Efecto hover */
+.ver-mas:hover a{
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.ver-mas:hover {
+    background-color: #c0d9af50;
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+}
+
+
+.trending-list li {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-trending-list-item);
+    padding: 8px 10px;
+    border-radius: 8px;
+    gap: 10px;
+    position: relative;
+    transition: all 0.1s ease-in-out;
+}
+
+/* EFECTO HOVER */
+.trending-list li:hover {
+    background-color: var(--color-trending-list-item-hover); /* fondo más claro */
+    opacity: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.005);
+    cursor: pointer;
+}

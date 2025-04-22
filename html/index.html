@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "description" content = "USC Predict es una plataforma de predicción de eventos">
+    <meta name = "keywords" content = "USC, Predict, Eventos, Predicción">
+    <meta name = "author" content = "Mateo Bodenlle y Diego Cristóbal">
+    <title>USC Predict</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/styles.css">
+    <link rel="stylesheet" href="../Css/index.css">
+    <link rel="stylesheet" href="../Css/layoutComun.css">
+    <link rel="stylesheet" href="../Css/Componentes/card.css">
+    <link rel="stylesheet" href="../Css/Componentes/trendingList.css">
+</head>
+<body>
+
+<!-- Encabezado principal del sitio -->
+<header id="navbar"></header>
+
+<!-- Contenido principal -->
+
+<main class="container">
+    <!-- Título e introducción -->
+    <header class="home-header">
+        <h1>USC PREDICT</h1>
+    </header>
+
+    <!-- Tarjetas principales -->
+    <section class="card-grid" id="contenedor-tarjetas"></section>
+
+    <!-- Sección de listas Trending y Actividad -->
+    <section class="trending-actividad-container">
+
+        <article class="trending-box">
+            <div class="trending-header">
+                <span class="icon">📈</span>
+                <h2>Trending 🔥</h2>
+            </div>
+            <div class="trending-list-wrapper">
+                <ul class="trending-list">
+
+                </ul>
+
+
+                <div class="ver-mas" id="ver-mas-trending">
+                    <a>Ver más...</a>
+                </div>
+            </div>
+        </article>
+
+
+        <section class="trending-box">
+            <div class="trending-header">
+                <span class="icon">📈</span>
+                <h2>Actividad 🔥</h2>
+            </div>
+        <div class="trending-list-wrapper">
+            <ul class="trending-list"></ul>
+
+
+            <div class="ver-mas" id="ver-mas-trending2">
+                <a>Ver más...</a>
+            </div>
+        </div>
+        </section>
+    </section>
+
+
+</main>
+
+
+<!-- Pie de página -->
+<footer id="footer"></footer>
+
+
+</body>
+
+</html>
+<script src="../Js/componentes.js">
+</script>
+<script type="module">
+    import { generarTarjetas } from '../Js/loaderCards.js';
+
+    // Callback para click en la tarjeta: redirige a la página de detalles pasando el id
+    const onClick = (evento) => {
+        window.location.href = `Detalles.html?id=${evento.id}`;
+    };
+
+    // Callbacks para botones "SI" y "NO"
+    const onSi = (evento, tarjeta) => {
+        window.location.href = `Detalles.html?id=${evento.id}&voto=si`;
+    };
+    const onNo = (evento, tarjeta) => {
+        window.location.href = `Detalles.html?id=${evento.id}&voto=no`;
+    };
+
+
+    // Cargar el JSON con la información de los eventos
+    fetch('../Resources/Data/eventos.json')
+        .then(response => response.json())
+        .then(eventos => {
+            const contenedor = document.getElementById('contenedor-tarjetas');
+            const eventosLimitados = eventos.slice(0, 6); // Limitar a 6 eventos
+            generarTarjetas(contenedor, eventosLimitados, onClick, onSi, onNo);
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
+</script>
+
+<script src="../Js/trendingListsIndex.js"> </script>
+

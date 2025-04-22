@@ -1,0 +1,39 @@
+/*Layout index*/
+
+/* Título principal */
+.home-header {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.home-header h1 {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.home-header .intro {
+    max-width: 700px;
+    margin: 10px auto;
+    font-size: 14px;
+    color: #c0d9af;
+}
+
+
+/* Tarjetas tipo grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 13px;
+    margin: 22px 0;
+}
+
+/* Contenedor para Trending + Actividad */
+.trending-actividad-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 23px 0px 10px 0px;
+    max-width: 2500px;
+}
