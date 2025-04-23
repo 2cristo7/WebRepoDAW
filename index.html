@@ -9,11 +9,11 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'">
     <title>USC Predict</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Css/styles.css">
-    <link rel="stylesheet" href="Css/index.css">
-    <link rel="stylesheet" href="Css/layoutComun.css">
-    <link rel="stylesheet" href="Css/Componentes/card.css">
-    <link rel="stylesheet" href="Css/Componentes/trendingList.css">
+    <link rel="stylesheet" href="./Css/styles.css">
+    <link rel="stylesheet" href="./Css/index.css">
+    <link rel="stylesheet" href="./Css/layoutComun.css">
+    <link rel="stylesheet" href="./Css/Componentes/card.css">
+    <link rel="stylesheet" href="./Css/Componentes/trendingList.css">
 </head>
 <body>
 
@@ -122,7 +122,7 @@
 
 </html>
 <script type="module">
-    import { generarTarjetas } from 'Js/loaderCards.js';
+    import { generarTarjetas } from './Js/loaderCards.js';
 
     // Callback para click en la tarjeta: redirige a la página de detalles pasando el id
     const onClick = (evento) => {
@@ -149,5 +149,5 @@
         .catch(error => console.error('Error al cargar el JSON:', error));
 </script>
 
-<script src="Js/trendingListsIndex.js"> </script>
+<script src="./Js/trendingListsIndex.js"> </script>
 
