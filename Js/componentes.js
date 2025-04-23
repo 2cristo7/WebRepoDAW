@@ -31,5 +31,5 @@ const activarBotonNavbar = () => {
 };
 
 // Cargar navbar y luego activar botón
-includeHTML("#navbar", "../Html/Componentes/navbar.html", activarBotonNavbar);
-includeHTML("#footer", "../Html/Componentes/footer.html");
+includeHTML("#navbar", "./Componentes/navbar.html", activarBotonNavbar);
+includeHTML("#footer", "./Componentes/footer.html");
