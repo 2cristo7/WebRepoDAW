@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
         <span class="trending-pct">${evento.historicoPrecios[evento.historicoPrecios.length - 1] * 100 || 'x'}%</span>        `;
         li.addEventListener('click', () => {
-            window.location.href = `./html/Detalles.html?id=${evento.id}`;
+            window.location.href = `../Html/Detalles.html?id=${evento.id}`;
         });
         return li;
     }

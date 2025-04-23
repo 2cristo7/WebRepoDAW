@@ -9,11 +9,11 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'">
     <title>USC Predict</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Css/styles.css">
-    <link rel="stylesheet" href="./Css/index.css">
-    <link rel="stylesheet" href="./Css/layoutComun.css">
-    <link rel="stylesheet" href="./Css/Componentes/card.css">
-    <link rel="stylesheet" href="./Css/Componentes/trendingList.css">
+    <link rel="stylesheet" href="Css/styles.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/layoutComun.css">
+    <link rel="stylesheet" href="Css/Componentes/card.css">
+    <link rel="stylesheet" href="Css/Componentes/trendingList.css">
 </head>
 <body>
 
@@ -28,13 +28,13 @@
             </div>
         </div>
         <div class="nav-center">
-            <button onclick="location.href='html/Busqueda.html'" id="navBarBusqueda">Búsqueda</button>
-            <button onclick="location.href='html/Resueltos.html'" id="navBarResueltos">Resueltos</button>
-            <button onclick="location.href='html/Watchlist.html'" id="navBarWatchlist">Watchlist</button>
+            <button onclick="location.href='Html/Busqueda.html'" id="navBarBusqueda">Búsqueda</button>
+            <button onclick="location.href='Html/Resueltos.html'" id="navBarResueltos">Resueltos</button>
+            <button onclick="location.href='Html/Watchlist.html'" id="navBarWatchlist">Watchlist</button>
         </div>
         <div class="nav-right">
-            <button onclick="location.href='html/About_Us.html'" id="navBarAboutUs">About us</button>
-            <button onclick="location.href='html/contacto.html'" id="navBarContacto">Contacto</button>
+            <button onclick="location.href='Html/About_Us.html'" id="navBarAboutUs">About us</button>
+            <button onclick="location.href='Html/contacto.html'" id="navBarContacto">Contacto</button>
         </div>
     </nav>
 </header>
@@ -122,19 +122,19 @@
 
 </html>
 <script type="module">
-    import { generarTarjetas } from './Js/loaderCards.js';
+    import { generarTarjetas } from 'Js/loaderCards.js';
 
     // Callback para click en la tarjeta: redirige a la página de detalles pasando el id
     const onClick = (evento) => {
-        window.location.href = `./html/Detalles.html?id=${evento.id}`;
+        window.location.href = `Html/Detalles.html?id=${evento.id}`;
     };
 
     // Callbacks para botones "SI" y "NO"
     const onSi = (evento, tarjeta) => {
-        window.location.href = `./html/Detalles.html?id=${evento.id}&voto=si`;
+        window.location.href = `Html/Detalles.html?id=${evento.id}&voto=si`;
     };
     const onNo = (evento, tarjeta) => {
-        window.location.href = `./html/Detalles.html?id=${evento.id}&voto=no`;
+        window.location.href = `Html/Detalles.html?id=${evento.id}&voto=no`;
     };
 
 
@@ -149,5 +149,5 @@
         .catch(error => console.error('Error al cargar el JSON:', error));
 </script>
 
-<script src="./Js/trendingListsIndex.js"> </script>
+<script src="Js/trendingListsIndex.js"> </script>
 

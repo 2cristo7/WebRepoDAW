@@ -9,6 +9,6 @@ export const tarjetas = [
     { img: "../Resources/ImagenEventos/Ajedrez.jpg", nombre: "Torneo ajedrez", categoria: "Pasos", porcentaje: "42%" },
 ];
 
-export const cargarDetalles = (evento) => window.location.href = './Detalles.html';
+export const cargarDetalles = (evento) => window.location.href = './Detalles.Html';
 export const manejarSi = (evento) => alert(`Votaste SÍ en: ${evento.nombre}`);
 export const manejarNo = (evento) => alert(`Votaste NO en: ${evento.nombre}`);
