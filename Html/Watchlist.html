@@ -6,8 +6,14 @@
     <meta name="description" content="Watchlist: listado de apuestas pendientes, con datos del evento">
     <meta name="keywords" content="USC, Predict, Eventos, Apuestas, Watchlist">
     <meta name="author" content="Mateo Bodenlle y Diego Cristóbal">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data:; font-src * data:; connect-src *;">
-    <title>Watchlist</title>
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        script-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        connect-src 'self';
+    ">    <title>Watchlist</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/styles.css">
     <link rel="stylesheet" href="../Css/watchlist.css">

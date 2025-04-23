@@ -6,8 +6,14 @@
     <meta name="description" content="Lista de eventos resueltos, vista por categorías">
     <meta name="keywords" content="USC, Predict, Eventos, Resueltos, Categorías, Predicción">
     <meta name="author" content="Mateo Bodenlle y Diego Cristóbal">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data:; font-src * data:; connect-src *;">
-    <title>Resueltos</title>
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        script-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        connect-src 'self';
+    ">    <title>Resueltos</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/styles.css">
     <link rel="stylesheet" href="../Css/resueltos.css">
