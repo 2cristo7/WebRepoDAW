@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
         <span class="trending-pct">${evento.historicoPrecios[evento.historicoPrecios.length - 1] * 100 || 'x'}%</span>        `;
         li.addEventListener('click', () => {
-            window.location.href = `Detalles.html?id=${evento.id}`;
+            window.location.href = `./html/Detalles.html?id=${evento.id}`;
         });
         return li;
     }
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Seleccionamos todas las cajas trending
     const cajasTrending = document.querySelectorAll(".trending-box");
     // Cargar el JSON de eventos
-    fetch('../Resources/Data/eventos.json')
+    fetch('./Resources/Data/eventos.json')
         .then(response => response.json())
         .then(eventos => {
             // Obtenemos los contenedores de las listas (se esperan dos elementos con la clase "trending-list")
