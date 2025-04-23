@@ -2,6 +2,7 @@
 const includeHTML = async (selector, url, callback) => {
     const contenedor = document.querySelector(selector);
     if (contenedor) {
+        console.log(url)
         const respuesta = await fetch(url);
         contenedor.innerHTML = await respuesta.text();
         if (typeof callback === "function") {
